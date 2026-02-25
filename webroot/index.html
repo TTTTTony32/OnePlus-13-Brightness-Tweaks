@@ -1,0 +1,16 @@
+<!DOCTYPE html><html lang=zh-CN><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><title>Brightness Tweaks</title><style>:root{--bg:#0f0f0f;--card:#1a1a1a;--border:#2a2a2a;--text:#e0e0e0;--text2:#888;--green:#4caf50;--red:#f44336;--yellow:#ff9800;--blue:#2196f3}*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--text);max-width:600px;margin:0 auto;padding:16px;font-family:-apple-system,Helvetica Neue,sans-serif}h1{align-items:center;gap:8px;margin-bottom:16px;font-size:20px;font-weight:600;display:flex}h1 .icon{font-size:24px}.card{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:12px;padding:16px}.card-title{color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;font-size:13px}.row{border-bottom:1px solid var(--border);justify-content:space-between;align-items:center;padding:8px 0;display:flex}.row:last-child{border-bottom:none}.label{color:var(--text2);font-size:14px}.value{font-family:monospace;font-size:14px;font-weight:500}.badge{border-radius:4px;padding:2px 8px;font-size:12px;font-weight:600;display:inline-block}.badge-ok{color:var(--green);background:#4caf5026}.badge-fail{color:var(--red);background:#f4433626}.badge-warn{color:var(--yellow);background:#ff980026}.brightness-bar{background:var(--border);border-radius:4px;height:8px;margin-top:12px;overflow:hidden}.brightness-fill{background:linear-gradient(90deg, var(--blue), var(--green), var(--yellow));border-radius:4px;height:100%;transition:width .5s}.big-num{text-align:center;padding:8px 0;font-family:monospace;font-size:48px;font-weight:700}.big-label{text-align:center;color:var(--text2);font-size:12px}.btn{border:1px solid var(--border);background:var(--card);width:100%;color:var(--text);cursor:pointer;text-align:center;border-radius:8px;margin-top:12px;padding:12px;font-size:14px;display:block}.btn:active{background:var(--border)}#error{color:var(--red);word-break:break-all;background:#f443361a;border:1px solid #f443364d;border-radius:8px;margin-bottom:12px;padding:12px;font-size:13px;display:none}#debug{background:var(--card);border:1px solid var(--border);color:var(--text2);white-space:pre-wrap;word-break:break-all;border-radius:8px;margin-top:12px;padding:12px;font-family:monospace;font-size:11px;display:none}.loading{text-align:center;color:var(--text2);padding:40px}.detail-toggle{cursor:pointer;-webkit-tap-highlight-color:transparent}.detail-toggle:active{background:var(--border)}</style><body>
+
+<h1><span class=icon>☀</span> Brightness Tweaks</h1>
+
+<div id=error></div>
+
+<div id=content>
+  <div class=loading id=loading>Loading...</div>
+</div>
+
+<button class=btn onclick=toggleDebug() style=color:var(--text2);margin-top:8px;font-size:12px>Debug Log</button>
+<div id=debug></div>
+
+<script type=module src=webui-src.4e765c6d.js></script>
+
+

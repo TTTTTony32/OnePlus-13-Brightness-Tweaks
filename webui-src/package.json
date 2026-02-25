@@ -1,0 +1,14 @@
+{
+  "name": "brightness-tweaks-webui",
+  "private": true,
+  "scripts": {
+    "dev": "parcel serve src/index.html",
+    "build": "parcel build src/index.html --dist-dir ../webroot --no-source-maps --public-url ./"
+  },
+  "devDependencies": {
+    "parcel": "^2"
+  },
+  "dependencies": {
+    "kernelsu": "*"
+  }
+}

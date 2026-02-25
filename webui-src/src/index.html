@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brightness Tweaks</title>
+<style>
+:root {
+  --bg: #0f0f0f;
+  --card: #1a1a1a;
+  --border: #2a2a2a;
+  --text: #e0e0e0;
+  --text2: #888;
+  --green: #4caf50;
+  --red: #f44336;
+  --yellow: #ff9800;
+  --blue: #2196f3;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, "Helvetica Neue", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+h1 .icon { font-size: 24px; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+.card-title {
+  font-size: 13px;
+  color: var(--text2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.row:last-child { border-bottom: none; }
+.label { font-size: 14px; color: var(--text2); }
+.value { font-size: 14px; font-weight: 500; font-family: monospace; }
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.badge-ok { background: rgba(76,175,80,0.15); color: var(--green); }
+.badge-fail { background: rgba(244,67,54,0.15); color: var(--red); }
+.badge-warn { background: rgba(255,152,0,0.15); color: var(--yellow); }
+.brightness-bar {
+  margin-top: 12px;
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.brightness-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--blue), var(--green), var(--yellow));
+  transition: width 0.5s ease;
+}
+.big-num {
+  font-size: 48px;
+  font-weight: 700;
+  font-family: monospace;
+  text-align: center;
+  padding: 8px 0;
+}
+.big-label {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text2);
+}
+.btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--text);
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+}
+.btn:active { background: var(--border); }
+#error {
+  background: rgba(244,67,54,0.1);
+  border: 1px solid rgba(244,67,54,0.3);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: var(--red);
+  display: none;
+  word-break: break-all;
+}
+#debug {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--text2);
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-break: break-all;
+  display: none;
+}
+.loading { text-align: center; padding: 40px; color: var(--text2); }
+.detail-toggle { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.detail-toggle:active { background: var(--border); }
+</style>
+</head>
+<body>
+
+<h1><span class="icon">&#9728;</span> Brightness Tweaks</h1>
+
+<div id="error"></div>
+
+<div id="content">
+  <div class="loading" id="loading">Loading...</div>
+</div>
+
+<button class="btn" onclick="toggleDebug()" style="margin-top:8px;font-size:12px;color:var(--text2)">Debug Log</button>
+<div id="debug"></div>
+
+<script type="module" src="./main.js"></script>
+</body>
+</html>

@@ -1,2 +1,4 @@
 /etc/
+/webui-src/.parcel-cache/
+/webui-src/node_modules/
 debug.log
